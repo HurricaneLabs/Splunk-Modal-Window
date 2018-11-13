@@ -34,7 +34,7 @@ define([
             },
     
             render: function() {
-                var data = { title : this.options.title }
+                var data = { title : this.options.title };
         	    this.$el.html(this.template(data));
                 return this;
             },
