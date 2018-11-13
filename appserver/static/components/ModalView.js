@@ -8,9 +8,9 @@ define([
     ], function(_, Backbone, $, mvc, SearchManager, TableElement) {
 
         var modalTemplate = "<div id=\"pivotModal\" class=\"modal\">" +
-                       "<div class=\"modal-header\"><h3><%- title %></h3></div>" +
+                       "<div class=\"modal-header\"><h3><%- title %></h3><button class=\"close\">Close</button></div>" +
                        "<div class=\"modal-body\"></div>" +
-                       "<div class=\"modal-footer\"><button class=\"close\">Close</button></div>" +
+                       "<div class=\"modal-footer\"></div>" +
                        "</div>" +
                        "<div class=\"modal-backdrop\"></div>";
 

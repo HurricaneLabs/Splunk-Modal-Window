@@ -1,7 +1,7 @@
 require([
     'underscore',
     'backbone',
-    '../app/dev_app/components/ModalView',
+    '../app/Splunk-Modal-Window/components/ModalView',
     'splunkjs/mvc',
     'splunkjs/mvc/searchmanager',
     'splunkjs/mvc/simplexml/ready!'
@@ -20,14 +20,12 @@ require([
     }, {tokens: true, tokenNamespace: "submitted"});  
 
     master.on("click", function(e) {
+        e.preventDefault();
         if(e.field === "sourcetype") {
-            
-            e.preventDefault();
             var _title = e.data['click.value'];
             tokens.set('sourcetype', _title);
             var modal = new ModalView({ title: _title, search: detailSearch });
             modal.show();
-            
         }
         
     });
