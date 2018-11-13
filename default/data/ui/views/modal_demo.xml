@@ -1,0 +1,22 @@
+<form script="app.js">
+  <label>Modal Demo</label>
+  <fieldset submitButton="false">
+    <!--
+            Create an input to store the drilldown value. It will be hidden using custom javascript when
+            the dashboard is loaded.
+         -->
+    <input type="text" token="sourcetype" searchWhenChanged="true"></input>
+  </fieldset>
+  <row>
+    <panel>
+      <table id="master">
+        <title>Master</title>
+        <searchString>index=_internal | stats count by sourcetype</searchString>
+        <earliestTime>-60m@m</earliestTime>
+        <latestTime>now</latestTime>
+        <!-- Set the type of of drilldown, since we will always consume the same field, use row-->
+        <option name="drilldown">row</option>
+      </table>
+    </panel>
+  </row>
+</form>
